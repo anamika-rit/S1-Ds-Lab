@@ -124,7 +124,7 @@ int main()
                                 display();
                                 break;
                         case(5):
-                             printf("Stack empty!\n");
+                        printf("Exiting...\n");
                                 exit(0);
                         default:
                                 printf("Invalid choice!\n");
