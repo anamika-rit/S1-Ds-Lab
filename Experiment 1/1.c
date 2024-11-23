@@ -75,6 +75,12 @@ void search()
         struct node * temp;
         int item;
         int flag=0;
+        if(top==NULL)
+        {
+                printf("Stack empty!\n");
+        }
+        else
+        {
         printf("Enter the item :");
         scanf("%d",&item);
         temp=top;
@@ -91,8 +97,8 @@ void search()
         {
                 printf("Item not found!\n");
         }
+        }
 }
-
 
 
 
@@ -118,6 +124,7 @@ int main()
                                 display();
                                 break;
                         case(5):
+                             printf("Stack empty!\n");
                                 exit(0);
                         default:
                                 printf("Invalid choice!\n");
