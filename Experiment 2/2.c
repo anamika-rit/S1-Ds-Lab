@@ -143,27 +143,31 @@ void deleteFromPosition(int position)
 
 void deleteFromBack()
 {
-        if(head == NULL)
-        {
-                printf("List is empty.\n");
-                return;
-        }
+    if (head == NULL)
+    {
+        printf("List is empty.\n");
+        return;
+    }
 
-        struct node* temp = head;
-
-        if(temp->next == NULL)
-        {
-                free(temp);
-                head = NULL;
-                return;
-        }
-
-        while(temp->next != NULL)
-        {
-                temp = temp->next;
-        }
-        temp->next = NULL;
+    struct node* temp = head;
+    
+    if (temp->next == NULL)
+    {
         free(temp);
+        head = NULL;
+        return;
+    }
+
+    struct node* prev = NULL;
+    
+    while (temp->next != NULL)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+    
+    prev->next = NULL;
+    free(temp);
 }
 
 
