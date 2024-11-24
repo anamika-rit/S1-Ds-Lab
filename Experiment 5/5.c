@@ -79,28 +79,28 @@ int search()
     } 
     else 
     {
-        int searchItem, found = 0;
+        int item, flag = 0;
         printf("Enter Element to Search: ");
-        scanf("%d", &searchItem);
+        scanf("%d", &item);
         for (i = front; i != rear; i = (i + 1) % size) 
         {
-            if (queue[i] == searchItem) 
+            if (queue[i] == item) 
             {
-                found = 1;
+                flag = 1;
                 break;
             }
         }
-        if (queue[i] == searchItem) 
+        if (queue[i] == item) 
         {
-            found = 1;
+            flag = 1;
         }
-        if (found) 
+        if (flag) 
         {
-            printf("Element %d found in the queue\n", searchItem);
+            printf("Element %d found in the queue\n", item);
         } 
         else 
         {
-            printf("Element %d not found in the queue\n", searchItem);
+            printf("Element %d not found in the queue\n", item);
         }
     }
 }
@@ -108,11 +108,20 @@ int search()
 
 int main() 
 {
-    int option;
+    int choice;
     printf("Enter the size of the circular queue: ");
     scanf("%d", &size);
 
+/*
+    if (size <= 0) 
+    {
+        printf("Invalid size. Size must be greater than 0. Exiting program.");
+        exit(1);
+    }
+*/
+
     queue = (int*) malloc(size * sizeof(int));
+
 
     if (queue == NULL) 
     {
@@ -124,8 +133,8 @@ int main()
     {
         printf("\n1.Enqueue\n2.Dequeue\n3.Display\n4.Search\n5.Exit");
         printf("\nSelect Operation : ");
-        scanf("%d", &option);
-        switch(option) 
+        scanf("%d", &choice);
+        switch(choice) 
         {
             case 1:
                 enqueue();
@@ -141,6 +150,7 @@ int main()
                 break;
             case 5:
                 free(queue);
+                printf("Exiting...");
                 exit(0);
             default:
                 printf("Invalid Option\n");
