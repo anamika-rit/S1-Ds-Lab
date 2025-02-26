@@ -16,4 +16,6 @@ This repository contains the experiments for the Data Structures Lab as part of 
 ---
 ## Contributing
 
-If you have suggestions for improvements or would like to contribute to this repository, feel free to submit a pull request or open an issue. We welcome any contributions that can help enhance the learning experience.
+Feel free to explore each cycle folder for the corresponding experiments.
+
+If you encounter any issues or wish to contribute, please raise an issue or submit a pull request.
